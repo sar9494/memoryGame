@@ -1,0 +1,23 @@
+.card{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(190, 196, 196);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.unclick{
+    visibility: hidden;
+}
+#game-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 450px;
+}
+.clicked{
+    visibility: visible;
+}
