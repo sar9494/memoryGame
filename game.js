@@ -79,7 +79,7 @@ function check() {
         secondClick.querySelector("p").classList.add("unclick");
 
         start();
-    }, 1000); 
+    }, 500); 
 }
 
 function start() {
@@ -87,3 +87,37 @@ function start() {
     secondClick = null;
     lockbutton = false;
 }
+const timer=document.createElement("div");
+timer.id="timer"
+let labelMin=document.createElement("label")
+labelMin.id="minutes"
+labelMin.appendChild(document.createTextNode("00"))
+let labelSec=document.createElement("label")
+labelSec.id="seconds"
+labelSec.appendChild(document.createTextNode("00"))
+let dots=document.createElement("p")
+dots.innerText=":"
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+timer.appendChild(labelMin)
+timer.appendChild(dots)
+timer.appendChild(labelSec)
+
+container.appendChild(timer)

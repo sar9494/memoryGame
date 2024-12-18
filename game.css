@@ -7,6 +7,10 @@
     align-items: center;
     border-radius: 5px;
 }
+.card:hover{
+    transform: scale(1.09);
+    transition: ease-in-out 1s;
+}
 .unclick{
     visibility: hidden;
 }
@@ -20,4 +24,8 @@
 }
 .clicked{
     visibility: visible;
+}
+.timer{
+    display: flex;
+    justify-content: center;
 }
